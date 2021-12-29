@@ -6,6 +6,16 @@ Mach-O, short for Mach object file format, is a file format for executables, obj
 
 A Unix-like operating system developed at Carnegie-Mellon University in the period between 1985 and 1994. The Mach kernel was designed with a microkernel architecture that makes it easily portable to different platforms. Operating systems based on Mach include NextStep, OSF/1 and macOS.
 
+MACL
+
+com.apple.macl
+
+The obscure feature, a hidden part of MacOS that underpins Apple’s concept of User-Intent, a shift in focus for MacOS privacy controls in an attempt to stop endless prompts interrupting the user.
+
+The MACL attribute usually consists of a header value of 02 00 followed by a UUID corresponding to the application permitted to access the file. The UUID is unique for each system, user and application meaning that we can’t preempt what this value will be in advance.
+
+xattr -l file1
+
 
 
 # macos security
@@ -13,6 +23,8 @@ A Unix-like operating system developed at Carnegie-Mellon University in the peri
 SIP - System Integrity Protection
 
 TCC - Transparency, Consent, and Control
+
+user space -> req access to file -> kernel space -> TCC -> Validate Code Signing requirement
 
 
 # get ssid 
@@ -33,4 +45,18 @@ system_profiler SPAirPortDataType
 
 # get users
 dscl . list /Users | grep -v _
+
+
+
+# d2d
+
+xattr -- display and manipulate extended attributes https://ss64.com/osx/xattr.html
+
+
+# CVEs
+```
+CVE-2020-27937, CVE-2020-29621, CVE-2020-10006, CVE-2020-24259, CVE-2020-9771, CVE-2021-1784, CVE-2021-30751, CVE-2020-9963, CVE-2021-1803, CVE-2021-1781, CVE-2021-30750, many more to read, understand and write about.
+```
+
+
 
