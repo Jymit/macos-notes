@@ -16,6 +16,14 @@ The MACL attribute usually consists of a header value of 02 00 followed by a UUI
 
 xattr -l file1
 
+Dylib
+
+Dynamic Library, The Mach-O object file format used by Mac OS X for executables and libraries distinguishes between shared libraries and dynamically loaded modules. Use otool -hv some_file to see the filetype of some_file.
+
+https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/OverviewOfDynamicLibraries.html
+
+
+
 
 
 # macos security
@@ -47,10 +55,22 @@ system_profiler SPAirPortDataType
 dscl . list /Users | grep -v _
 
 
+# runtime flag
+
+codesign -d -vv Atom.app
+
+```
+flags=0x10000(runtime)
+```
 
 # d2d
 
 xattr -- display and manipulate extended attributes https://ss64.com/osx/xattr.html
+
+codesign -- Create and manipulate code signatures https://www.manpagez.com/man/1/codesign/
+
+otool -- lvm-otool, the otool-compatible command line parser for llvm-objdump
+
 
 
 # CVEs
