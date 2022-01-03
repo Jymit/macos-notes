@@ -57,6 +57,10 @@ dscl . list /Users | grep -v _
 
 # runtime flag
 
+The Hardened Runtime, along with System Integrity Protection (SIP), protects the runtime integrity of your software by preventing certain classes of exploits, like code injection, dynamically linked library (DLL) hijacking, and process memory space tampering.
+
+- https://developer.apple.com/documentation/security/hardened_runtime
+
 codesign -d -vv Atom.app
 
 ```
