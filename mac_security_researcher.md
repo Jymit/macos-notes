@@ -26,6 +26,8 @@ com.apple.security.get-task-allow entitlement. On macOS when process A wants to 
 - the A is run as root or possesses task_for_pid-allow entitlement
 - or the B is signed with com.apple.security.get-task-allow.
 
+taskgated - task_for_pid access control daemon
+
 mach_vm_write - https://developer.apple.com/documentation/kernel/1402070-mach_vm_write
 
 task_for_pid() -
@@ -41,10 +43,20 @@ To build a utility that will use task_for_pid(), you need to do the following:
 4. Compile your program and code-sign it.
 ```
 
+If you want to debug a hardened app (without the get-task-allow entitlement), you should disable the System Integrity Protection. The hardened runtime feature gives macOS some cross-app isolation.
+
+In all new projects, the hardened runtime flag is turned on by default. In the old projects, it was enforced by Apple in the macOS Catalina. All apps that are downloaded from the Internet (outside of the App Store) are quarantined and thus need to be notarized.
+
+- When the process doesn’t have the hardened runtime capability turned on and the com.apple.security.get-task-allow entitlements are not set, the easiest way to inject your code is to use the DYLD_INSERT_LIBRARIES environment variable.
+
+- https://theevilbit.github.io/posts/dyld_insert_libraries_dylib_injection_in_macos_osx_deep_dive/
+- Csaba Fitzl
 
 
+- DYLD_INSERT_LIBRARIES 
+- This  is  a colon separated list of dynamic libraries to load before the ones specified in the program.  This lets you test new modules of existing dynamic shared libraries that are used in flat-namespace images by loading a temporary dynamic shared library with just the new modules. Note that this has no effect on images built a two-level  namespace  images  using  a  dynamic shared library unless DYLD_FORCE_FLAT_NAMESPACE is also used.
 
-
+- it will load any dylibs you specify in this variable before the program loads, essentially injecting a dylib into the application.
 
 
 
