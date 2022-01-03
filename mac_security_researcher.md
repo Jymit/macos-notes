@@ -1,4 +1,9 @@
 #### mac_security_researcher
+
+At the time of writing running macOS Big Sur 11.6.2 (20G314)
+
+#### mac_security_researcher 101
+
 https://twitter.com/RonMasas/status/1470654363639197699?s=20
 
 https://twitter.com/_r3ggi
@@ -35,6 +40,18 @@ To build a utility that will use task_for_pid(), you need to do the following:
    to execute task\_for_pid() 
 4. Compile your program and code-sign it.
 ```
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
