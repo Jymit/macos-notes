@@ -4,11 +4,21 @@ At the time of writing running macOS Big Sur 11.6.2 (20G314)
 
 #### mac_security_researcher 101
 
-https://twitter.com/RonMasas/status/1470654363639197699?s=20
+https://twitter.com/RonMasas/status/1470654363639197699?s=20 - Ron Masas
 
-https://twitter.com/_r3ggi
+https://twitter.com/_r3ggi - Wojciech Reguła
 
-https://twitter.com/xorrior
+https://twitter.com/xorrior - Christopher Ross
+
+https://twitter.com/theevilbit - Csaba Fitzl
+
+https://twitter.com/cedowens - Cedric Owens
+
+https://twitter.com/objective_see
+
+https://twitter.com/patrickwardle - Patrick Wardle
+
+The Art Of Macos Malware - https://taomm.org/
 
 
 #### MacOS != Linux
