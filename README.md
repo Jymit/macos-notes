@@ -1,10 +1,10 @@
 ## macos-notes
 
-#### .
+####
 
-mac_security_researcher one oh one
+[mac_security_researcher one oh one](https://github.com/Jymit/macos-notes/blob/main/mac_security_researcher.md)
 
-#### .
+####
 
 Mach-O
 
