@@ -2,7 +2,7 @@
 
 ####
 
-[mac_security_researcher] one oh one(https://github.com/Jymit/macos-notes/blob/main/mac_security_researcher.md)
+[mac_security_researcher](https://github.com/Jymit/macos-notes/blob/main/mac_security_researcher.md) one oh one
 
 ####
 
