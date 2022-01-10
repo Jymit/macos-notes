@@ -40,6 +40,7 @@ TCC - Transparency, Consent, and Control
 
 user space -> req access to file -> kernel space -> TCC -> Validate Code Signing requirement
 
+NSAppTransportSecurity - ATS https://developer.apple.com/documentation/bundleresources/information_property_list/nsapptransportsecurity
 
 # get ssid 
 /System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -I
@@ -89,7 +90,4 @@ CVE-2020-27937, CVE-2020-29621, CVE-2020-10006, CVE-2020-24259, CVE-2020-9771, C
 ```
 
 https://github.com/hetmehtaa/Mac_Vuln
-
-
-
 
