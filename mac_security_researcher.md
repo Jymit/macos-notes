@@ -20,6 +20,8 @@ https://twitter.com/patrickwardle - Patrick Wardle
 
 The Art Of Macos Malware - https://taomm.org/
 
+Security content of macOS Monterey 12.1 - https://support.apple.com/en-gb/HT212978
+
 
 #### MacOS != Linux
 write data to the victim’s process memory using the ptrace
