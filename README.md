@@ -6,6 +6,16 @@
 
 ####
 
+####
+Useful tooling
+
+https://github.com/cedowens/macOS-browserhist-parser/tree/master/parse-browser-history
+
+https://github.com/xorrior/macOSTools
+
+https://github.com/its-a-feature/macos_execute_from_memory
+####
+
 Mach-O
 
 Mach-O, short for Mach object file format, is a file format for executables, object code, shared libraries, dynamically-loaded code, and core dumps. It was developed to replace the a. out format. Mach-O is used by most systems based on the Mach kernel.
