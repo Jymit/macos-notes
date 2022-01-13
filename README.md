@@ -16,13 +16,13 @@ https://github.com/xorrior/macOSTools
 https://github.com/its-a-feature/macos_execute_from_memory
 ####
 
-Mach-O
+## Mach-O
 
 Mach-O, short for Mach object file format, is a file format for executables, object code, shared libraries, dynamically-loaded code, and core dumps. It was developed to replace the a. out format. Mach-O is used by most systems based on the Mach kernel.
 
 A Unix-like operating system developed at Carnegie-Mellon University in the period between 1985 and 1994. The Mach kernel was designed with a microkernel architecture that makes it easily portable to different platforms. Operating systems based on Mach include NextStep, OSF/1 and macOS.
 
-MACL
+## MACL
 
 com.apple.macl
 
@@ -32,13 +32,22 @@ The MACL attribute usually consists of a header value of 02 00 followed by a UUI
 
 xattr -l file1
 
-Dylib
+## Dylib
 
 Dynamic Library, The Mach-O object file format used by Mac OS X for executables and libraries distinguishes between shared libraries and dynamically loaded modules. Use otool -hv some_file to see the filetype of some_file.
 
 https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/OverviewOfDynamicLibraries.html
 
+## MACF
 
+Mandatory Access Control Framework - commonly referred to as MACF
+
+## KAuth
+
+Mac OS X 10.4 Tiger introduced a new kernel subsystem, Kernel Authorization or Kauth for short, for managing authorization within the kernel. The Kauth subsystem exports a kernel programming interface (KPI) that allows third party kernel developers to authorize actions within the kernel, modify authorization decisions, and extend the kernel's authorization landscape. It can also be used as a notification mechanism.
+
+
+(apple dev doc)[https://developer.apple.com/library/archive/technotes/tn2127/_index.html]
 
 
 
