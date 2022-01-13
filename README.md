@@ -40,18 +40,21 @@ https://developer.apple.com/library/archive/documentation/DeveloperTools/Concept
 
 ## MACF
 
-Mandatory Access Control Framework - commonly referred to as MACF
+Mandatory Access Control Framework - commonly referred to as MACF.
+
+In a nutshell Mandatory Access Control Framework (MACF) is a private kernel framework that allows Apple kexts to hook a myriad of (MACF) operations. Such hook (or callbacks) will then be invoked automatically by the kernel proper, and thus afford the kext (who registered the hook) the opportunity to a take a action …for example, to examine and block untrusted processes! Taken from Patricks Wardles Obj-See writeup on [Where's the Interpreter!?](https://objective-see.com/blog/blog_0x6A.html)
+
+More about macf and code around that soon...
 
 ## KAuth
 
 Mac OS X 10.4 Tiger introduced a new kernel subsystem, Kernel Authorization or Kauth for short, for managing authorization within the kernel. The Kauth subsystem exports a kernel programming interface (KPI) that allows third party kernel developers to authorize actions within the kernel, modify authorization decisions, and extend the kernel's authorization landscape. It can also be used as a notification mechanism.
 
+[KAuth apple doc](https://developer.apple.com/library/archive/technotes/tn2127/_index.html)
 
-(apple dev doc)[https://developer.apple.com/library/archive/technotes/tn2127/_index.html]
+- [Monitoring Process Creation via the Kernel (Part II)](https://objective-see.com/blog/blog_0x0A.html)
 
-
-
-# macos security
+## macos security
 
 SIP - System Integrity Protection
 
@@ -61,12 +64,12 @@ user space -> req access to file -> kernel space -> TCC -> Validate Code Signing
 
 NSAppTransportSecurity - ATS https://developer.apple.com/documentation/bundleresources/information_property_list/nsapptransportsecurity
 
-# get ssid 
+## get ssid 
 /System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -I
 
 /System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -I  | awk -F' SSID: '  '/ SSID: / {print $2}'
 
-# list system_profiler DataTypes
+## list system_profiler DataTypes
 system_profiler -listDataTypes
 
 system_profiler SPBluetoothDataType
@@ -77,11 +80,11 @@ system_profiler SPAirPortDataType
 
 
 
-# get users
+## get users
 dscl . list /Users | grep -v _
 
 
-# runtime flag
+## runtime flag
 
 The Hardened Runtime, along with System Integrity Protection (SIP), protects the runtime integrity of your software by preventing certain classes of exploits, like code injection, dynamically linked library (DLL) hijacking, and process memory space tampering.
 
@@ -93,7 +96,7 @@ codesign -d -vv Atom.app
 flags=0x10000(runtime)
 ```
 
-# d2d
+## d2d
 
 xattr -- display and manipulate extended attributes https://ss64.com/osx/xattr.html
 
@@ -103,7 +106,9 @@ otool -- lvm-otool, the otool-compatible command line parser for llvm-objdump
 
 
 
-# CVEs Vulns
+## CVEs Vulns
+
+CVEs im going to research and write notes about, not limited to just these.
 ```
 CVE-2020-27937, CVE-2020-29621, CVE-2020-10006, CVE-2020-24259, CVE-2020-9771, CVE-2021-1784, CVE-2021-30751, CVE-2020-9963, CVE-2021-1803, CVE-2021-1781, CVE-2021-30750, many more to read, understand and write about.
 CVE-2021-30970
