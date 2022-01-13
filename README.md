@@ -18,6 +18,8 @@ Persistence on mac [KnockKnock](https://objective-see.com/products/knockknock.ht
 
 Vid & Mic Spyware on mac [OverSight](https://objective-see.com/products/oversight.html)
 
+by Patrick Wardle, Creator of http://Objective-See.com - whoop whoop.
+
 ## The good stuff
 
 The learnings 
