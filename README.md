@@ -1,6 +1,6 @@
 ## My macOS inscriptions
 
-[Jymit the macos_security_researcher](https://github.com/Jymit/macos-notes/blob/main/mac_security_researcher.md)
+Jymit [The macos_security_researcher](https://github.com/Jymit/macos-notes/blob/main/mac_security_researcher.md)
 
 ## Useful tooling
 
