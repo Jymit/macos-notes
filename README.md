@@ -8,7 +8,7 @@ Jymit [The macos security researcher](https://github.com/Jymit/macos-notes/blob/
 
 [some macOS Offensive Tools](https://github.com/xorrior/macOSTools)
 
-[in-memory mach-o](executionhttps://github.com/its-a-feature/macos_execute_from_memory)
+[in-memory mach-o code](https://github.com/its-a-feature/macos_execute_from_memory)
 
 ## Ive played with
 
