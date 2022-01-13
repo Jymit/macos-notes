@@ -1,20 +1,26 @@
-## macos-notes
+## My macOS inscriptions
 
-####
+[Jymit the macos_security_researcher](https://github.com/Jymit/macos-notes/blob/main/mac_security_researcher.md)
 
-[mac_security_researcher](https://github.com/Jymit/macos-notes/blob/main/mac_security_researcher.md) one oh one
+## Useful tooling
 
-####
+[Browser History Parser](https://github.com/cedowens/macOS-browserhist-parser/tree/master/parse-browser-history)
 
-####
-Useful tooling
+[some macOS Offensive Tools](https://github.com/xorrior/macOSTools)
 
-https://github.com/cedowens/macOS-browserhist-parser/tree/master/parse-browser-history
+[in-memory mach-o](executionhttps://github.com/its-a-feature/macos_execute_from_memory)
 
-https://github.com/xorrior/macOSTools
+## Ive played with
 
-https://github.com/its-a-feature/macos_execute_from_memory
-####
+and will comment more on as time goes on
+
+Persistence on mac [KnockKnock](https://objective-see.com/products/knockknock.html)
+
+Vid & Mic Spyware on mac [OverSight](https://objective-see.com/products/oversight.html)
+
+## The good stuff
+
+The learnings 
 
 ## Mach-O
 
@@ -54,7 +60,7 @@ Mac OS X 10.4 Tiger introduced a new kernel subsystem, Kernel Authorization or K
 
 - [Monitoring Process Creation via the Kernel (Part II)](https://objective-see.com/blog/blog_0x0A.html)
 
-## macos security
+## mac acronyms, keywords
 
 SIP - System Integrity Protection
 
@@ -63,6 +69,9 @@ TCC - Transparency, Consent, and Control
 user space -> req access to file -> kernel space -> TCC -> Validate Code Signing requirement
 
 NSAppTransportSecurity - ATS https://developer.apple.com/documentation/bundleresources/information_property_list/nsapptransportsecurity
+
+
+## The CLI stuff
 
 ## get ssid 
 /System/Library/PrivateFrameworks/Apple80211.framework/Resources/airport -I
@@ -78,11 +87,8 @@ system_profiler SPFirewallDataType
 
 system_profiler SPAirPortDataType
 
-
-
 ## get users
 dscl . list /Users | grep -v _
-
 
 ## runtime flag
 
@@ -104,8 +110,6 @@ codesign -- Create and manipulate code signatures https://www.manpagez.com/man/1
 
 otool -- lvm-otool, the otool-compatible command line parser for llvm-objdump
 
-
-
 ## CVEs Vulns
 
 CVEs im going to research and write notes about, not limited to just these.
@@ -114,5 +118,5 @@ CVE-2020-27937, CVE-2020-29621, CVE-2020-10006, CVE-2020-24259, CVE-2020-9771, C
 CVE-2021-30970
 ```
 
-https://github.com/hetmehtaa/Mac_Vuln
+[MacOS/IOS Vulnerabilities and Exploitations.](https://github.com/hetmehtaa/Mac_Vuln)
 
