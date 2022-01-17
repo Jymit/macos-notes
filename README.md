@@ -62,6 +62,18 @@ Mac OS X 10.4 Tiger introduced a new kernel subsystem, Kernel Authorization or K
 
 - [Monitoring Process Creation via the Kernel (Part II)](https://objective-see.com/blog/blog_0x0A.html)
 
+## Other
+### DiskArbitration
+A system wide service @ /System/Library/LaunchDaemons/com.apple.diskarbitrationd.plist
+com.apple.DiskArbitration.diskarbitrationd (XPC)
+It manages disk mounting, unmounting
+It calls mount/unmount syscalls under the hood
+Goodies
+- runs as root
+- unsandboxed
+- XPC service accessible from application sandbox
+- opensource
+
 ## mac acronyms, keywords
 
 SIP - System Integrity Protection
