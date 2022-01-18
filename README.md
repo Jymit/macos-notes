@@ -10,6 +10,10 @@ Jymit [The macos security researcher](https://github.com/Jymit/macos-notes/blob/
 
 [in-memory mach-o code](https://github.com/its-a-feature/macos_execute_from_memory)
 
+## to read
+
+https://themittenmac.com/low-level-process-hunting-on-macos/
+
 ## Ive played with
 
 and will comment more on as time goes on
