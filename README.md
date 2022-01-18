@@ -202,18 +202,54 @@ However, this poses a security risk for a shipping app, because it can allow an 
 
 If you use a custom workflow and fail to remove the com.apple.security.get-task-allow entitlement, notarization fails with the following message: The executable requests the com.apple.security.get-task-allow entitlement.
 
+## System Integrity Protection (SIP)
+
+System Integrity Protection is a security technology in OS X El Capitan and later that's designed to help prevent potentially malicious software from modifying protected files and folders on your Mac. System Integrity Protection restricts the root user account and limits the actions that the root user can perform on protected parts of the Mac operating system.
+
+System Integrity Protection is designed to allow modification of these protected parts only by processes that are signed by Apple and have special entitlements to write to system files, such as Apple software updates and Apple installers. Apps that you download from the Mac App Store already work with System Integrity Protection. 
+
+```
+System Integrity Protection includes protection for these parts of the system:
+
+/System
+/usr
+/bin
+/sbin
+/var
+Apps that are pre-installed with OS X
+Paths and apps that third-party apps and installers can continue to write to include:
+
+/Applications
+/Library
+/usr/local
+```
+```
+To disable SIP, do the following:
+
+- Restart your computer in Recovery mode.
+- Launch Terminal from the Utilities menu.
+- Run the command % csrutil disable
+- Restart your computer.
 
 
+Disable SIP only temporarily to perform necessary tasks, and reenable it as soon as possible. Failure to reenable SIP when you are done testing leaves your computer vulnerable to malicious code.
 
-
-
-
+Same steps as above except % csrutil enable
+```
 
 ## d2d
 
 xattr -- display and manipulate extended attributes https://ss64.com/osx/xattr.html
 
-codesign -- Create and manipulate code signatures https://www.manpagez.com/man/1/codesign/
+codesign -- Create and manipulate code signatures
+
+plutil -- property list utility
+
+spctl -- SecAssessment 
+policy security
+
+csrutil -- Configure system security policies
+csrutil modifies System Integrity Protection settings.  Some of the commands require the device to be booted into the Recovery OS. [man page](https://www.manpagez.com/man/1/codesign/)
 
 otool -- lvm-otool, the otool-compatible command line parser for llvm-objdump
 
