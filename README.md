@@ -74,6 +74,43 @@ Goodies
 - XPC service accessible from application sandbox
 - opensource
 
+### app
+
+App Sandbox Entitlement
+A Boolean value that indicates whether the app may use access control technology to contain damage to the system and user data if an app is compromised.
+Key: com.apple.security.app-sandbox
+
+com.apple.security.network.server
+A Boolean value indicating whether your app may listen for incoming network connections.
+
+com.apple.security.network.client
+A Boolean value indicating whether your app may open outgoing network connections.
+
+com.apple.security.device.microphone
+A Boolean value that indicates whether the app may use the microphone.
+
+com.apple.security.device.usb
+A Boolean value indicating whether your app may interact with USB devices.
+
+com.apple.security.device.bluetooth
+A Boolean value indicating whether your app may interact with Bluetooth devices.
+
+Location Entitlement
+A Boolean value that indicates whether the app may access location information from Location Services.
+Key: com.apple.security.personal-information.location
+
+All Files Entitlement (Deprecated)
+A Boolean value that indicates whether the app may have access to all files.
+Key: com.apple.security.files.all
+
+com.apple.security.files.user-selected.read-write
+A Boolean value that indicates whether the app may have read-write access to files the user has selected using an Open or Save dialog.
+
+
+
+
+
+
 ## mac acronyms, keywords
 
 SIP - System Integrity Protection
@@ -104,7 +141,7 @@ system_profiler SPAirPortDataType
 ## get users
 dscl . list /Users | grep -v _
 
-## runtime flag
+## Hardened Runtime
 
 The Hardened Runtime, along with System Integrity Protection (SIP), protects the runtime integrity of your software by preventing certain classes of exploits, like code injection, dynamically linked library (DLL) hijacking, and process memory space tampering.
 
@@ -115,6 +152,62 @@ codesign -d -vv Atom.app
 ```
 flags=0x10000(runtime)
 ```
+
+````
+Latest Code Signature Format
+````
+macOS 11 and later will sign app bundles with the new signature format that include the DER entitlements by default. Check whether an app has the new signature
+
+codesign -dvv Jamf.app
+
+Look in the output for a string such as `CodeDirectory v=20500`. For any value of v less than 20400, you need to re-sign your app.
+
+You can control how your signed code loads signed plug-ins and other signed code without invalidating the signatures of the host code or of the guest (dynamically loaded) code.
+
+## notarization
+
+Notarization gives users more confidence that the Developer ID-signed software you distribute has been checked by Apple for malicious components. Notarization is not App Review. The Apple notary service is an automated system that scans your software for malicious content, checks for code-signing issues, and returns the results to you quickly. If there are no issues, the notary service generates a ticket for you to staple to your software; the notary service also publishes that ticket online where Gatekeeper can find it. [docs link](https://developer.apple.com/documentation/security/notarizing_macos_software_before_distribution)
+
+You can notarize several different types of software deliverables, including:
+
+- macOS apps
+- Non-app bundles, such as kernel extensions
+- Disk images (UDIF format)
+- Flat installer packages
+
+Note: Beginning in macOS 10.14.5, software signed with a new Developer ID certificate and all new or updated kernel extensions must be notarized to run. Beginning in macOS 10.15, all software built after June 1, 2019, and distributed with Developer ID must be notarized. However, you aren’t required to notarize software that you distribute through the Mac App Store because the App Store submission process already includes equivalent security checks.
+
+Additionally, you can use the spctl utility to determine if the software to be notarized will run with the system policies currently in effect.
+
+% spctl -vvv --assess --type exec /path/to/application
+
+### secure timestamp
+
+You can no longer build a release without an internet connection. Secure timestamps for codesign need to be turned on. Generating a secure timestamp requires internet access. macOS accepts only one secure timestamp server, namely timestamp.apple.com, which uses the follow address ranges:
+- 17.32.213.0/24
+- 17.179.249.0/24
+- 17.157.80.0/24
+
+You can check if a binary has a secure timestamp with the following command
+
+% codesign -dvv Jamf.app
+
+The presence of Signed Time in the output indicates the binary doesn’t have a secure timestamp.
+
+### com.apple.security.get-task-allow entitlement
+
+This entitlement facilitates debugging on a system that uses System Integrity Protection (SIP) by circumventing certain security checks.
+
+However, this poses a security risk for a shipping app, because it can allow an attacker to inject code at runtime. As a result, Xcode automatically strips the entitlement from your app when you export and sign it using the standard workflow.
+
+If you use a custom workflow and fail to remove the com.apple.security.get-task-allow entitlement, notarization fails with the following message: The executable requests the com.apple.security.get-task-allow entitlement.
+
+
+
+
+
+
+
 
 ## d2d
 
