@@ -1,6 +1,8 @@
 ## My macOS inscriptions
 
-Jymit [The macos security researcher](https://github.com/Jymit/macos-notes/blob/main/mac_security_researcher.md)
+Jymit [The macos security researcher](https://github.com/Jymit/macos-notes/blob/main/mac_security_researcher.md).
+
+Exploit readings, findings and mitigations over @ [readme](https://github.com/Jymit/exploit-notes/blob/main/readme.md).
 
 ## Useful tooling
 
