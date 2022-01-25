@@ -13,3 +13,22 @@ Timestamp                       Thread     Type        Activity             PID 
 .
 .
 ```
+
+```
+Gather all available System logs.
+gzcat /private/var/log/system.log.{9..0}.gz > ~/Downloads/system_all.log
+cat /private/var/log/system.log >> ~/Downloads/system_all.log
+```
+```
+Show if screen is locked or not
+log show --predicate 'eventMessage contains "com.apple.sessionagent.screenIs"'
+
+Show how screen was unlocked
+log show --predicate 'eventMessage contains "LWScreenLockAuthentication"'
+
+Show screenlocks, logouts, reboot; look for com.apple.[shutdownInitiated | logoutcancelled | restartinitiated]
+log show --predicate 'eventMessage contains "SessionAgentNotificationCenter"'
+
+Privilege Escalation, sudo
+log show --predicate '(process == "su" or process == "sudo") and eventMessage contains "TTY="'
+```
