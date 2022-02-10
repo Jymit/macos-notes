@@ -24,6 +24,9 @@ macOS 11: Big Sur - 12 November 2020
 macOS 12: Monterey - 25 October 2021
 ```
 
+### overview
+http://www.macpublic.ldc.lu.se/installation/Mac%20OS%20X%2010.2/System_Overview%2006_02.pdf
+
 ### FileVault
 Encrypt the startup disk on your Mac
 FileVault full-disk encryption (FileVault 2) uses XTS-AES-128 encryption with a 256-bit key to help prevent unauthorized access to the information on your startup disk. [link](https://support.apple.com/en-us/HT204837)
@@ -76,3 +79,13 @@ LC_LOAD_DYLINKER
 /usr/lib/libSystem.B.dylib
 
 LC_DYLIB - command defines the path for Linker to find the Dylib, and there can be however many of these commands as are required for the number of Dynamic Libraries.
+
+### Signed system volume security 
+For macOS 10.15, Apple introduced the read-only system volume, a dedicated, isolated volume for system content. macOS 11 adds strong cryptographic protections to system content with a signed system volume (SSV). SSV features a kernel mechanism that verifies the integrity of the system content at runtime and rejects any data — code and non-code — without a valid cryptographic signature from Apple.
+Inc talking about svv [link](https://support.apple.com/en-gb/guide/security/secd698747c9/web)
+
+### SSV
+Signed System Volume
+Every file on Big Sur’s System volume now has a SHA-256 cryptographic hash which is stored in the file system metadata. When data is read from the SSV, its current hash is compared with the stored hash to verify that the file hasn’t been tampered with or damaged. Those familiar with my file integrity tools will recognise that this is essentially the same technique employed by them.
+
+
