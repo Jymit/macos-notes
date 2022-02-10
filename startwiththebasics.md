@@ -152,4 +152,19 @@ link - https://www.hopperapp.com/
 ### DTrace
 DTrace is a comprehensive dynamic tracing framework originally created by Sun Microsystems for troubleshooting kernel and application problems on production systems in real time.
 link - https://poweruser.blog/using-dtrace-with-sip-enabled-3826a352e64b
+### DTrace eg
+On all current MacOS versions (Catalina 10.15.x, Big Sur 11.x) System Integrity Protection (SIP) is enabled by default and prevents most uses of dtrace and other tools and scripts based on it (i.e. dtruss).
 
+SIP doesn’t block tracing entirely
+SIP only blocks tracing of system executables that ship with MacOS (i.e. executables that live in paths like /bin , /System, etc). Which means dtrace works for all non-system executables (like your own app).
+link - https://poweruser.blog/using-dtrace-with-sip-enabled-3826a352e64b
+
+### macos system scripts
+dtrace -- dynamic tracing compiler and tracing utility
+iosnoop - snoop I/O events as they occur. Uses DTrace
+execsnoop - snoop new process execution. Uses DTrace.
+opensnoop - snoop file opens as they occur. Uses DTrace.
+dtruss - process syscall details. Uses DTrace.
+errinfo - print errno for syscall fails. Uses DTrace.
+iotop - display top disk I/O events by process. Uses DTrace.
+link - http://dtrace.org/blogs/brendan/2011/10/10/top-10-dtrace-scripts-for-mac-os-x/
