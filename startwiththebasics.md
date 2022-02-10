@@ -114,3 +114,42 @@ They are somewhat similar to the unix symlinks and hardlinks, but only directori
   /usr/libexec/cups usr/libexec/cups
   /usr/share/snmp usr/share/snmp
   ```
+  
+  
+### plist
+Property List Files
+Property list files are often used to store a user's settings.
+### bundles
+a bundle is a file directory with a defined structure and file extension, allowing related files to be grouped together as a conceptually single item
+### dyld Shared Cache
+The dyld shared cache is slightly misnamed because it’s not actually a cache [1]. Rather, it’s part of macOS’s mastering process. When Apple builds macOS we take all the commonly-used dynamic libraries and pre-link them together into a single shared file. This allows for many optimisations that improve app startup time. [link](https://developer.apple.com/forums/thread/692383)
+### NSObject
+The root class of most Objective-C class hierarchies, from which subclasses inherit a basic interface to the runtime system and the ability to behave as Objective-C objects.
+link - https://developer.apple.com/documentation/objectivec/nsobject
+link - https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/DefiningClasses/DefiningClasses.html
+### calling methods obj-c
+link - http://www.idev101.com/learn/objective_c_methods.html
+### obj-c data types
+link - https://www.tutorialspoint.com/objective_c/objective_c_data_types.htm
+
+## macOS Binary Analysis Tools
+### The Art Of Mac Malware: Analysis
+link - https://taomm.org/vol1/analysis.html
+
+### Reversing Malware by Exploring Segments & Sections
+pagestuff
+nm
+strings
+otool
+codesign
+objdump
+jtool2
+
+### static analysis
+Hopper, The macOS and Linux Disassembler
+link - https://www.hopperapp.com/
+
+### DTrace
+DTrace is a comprehensive dynamic tracing framework originally created by Sun Microsystems for troubleshooting kernel and application problems on production systems in real time.
+link - https://poweruser.blog/using-dtrace-with-sip-enabled-3826a352e64b
+
