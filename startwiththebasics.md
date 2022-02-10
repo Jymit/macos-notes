@@ -175,3 +175,9 @@ link - http://dtrace.org/blogs/brendan/2011/10/10/top-10-dtrace-scripts-for-mac-
 link - https://medium.com/@thisura1998/hello-world-assembly-program-on-macos-mojave-d5d65f0ce7c6
 NASM — The Netwide Assembler program and configuring it so you can just type nasm -f macho64 <file_name>.asm from anywhere.
 brew install nasm
+vi hello_world.asm
+nasm -f macho64 hello_world.asm
+ld -macosx_version_min 10.7.0 -o hello_world hello_world.o
+
+ld -- linker
+
