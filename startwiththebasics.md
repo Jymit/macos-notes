@@ -168,3 +168,10 @@ dtruss - process syscall details. Uses DTrace.
 errinfo - print errno for syscall fails. Uses DTrace.
 iotop - display top disk I/O events by process. Uses DTrace.
 link - http://dtrace.org/blogs/brendan/2011/10/10/top-10-dtrace-scripts-for-mac-os-x/
+
+
+
+### macos asm
+link - https://medium.com/@thisura1998/hello-world-assembly-program-on-macos-mojave-d5d65f0ce7c6
+NASM — The Netwide Assembler program and configuring it so you can just type nasm -f macho64 <file_name>.asm from anywhere.
+brew install nasm
