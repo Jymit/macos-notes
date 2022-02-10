@@ -88,4 +88,29 @@ Inc talking about svv [link](https://support.apple.com/en-gb/guide/security/secd
 Signed System Volume
 Every file on Big Sur’s System volume now has a SHA-256 cryptographic hash which is stored in the file system metadata. When data is read from the SSV, its current hash is compared with the stored hash to verify that the file hasn’t been tampered with or damaged. Those familiar with my file integrity tools will recognise that this is essentially the same technique employed by them.
 
+### Firmlinks
 
+Firmlinks are used on the system volume to point to the user data on the data volume.
+
+They are somewhat similar to the unix symlinks and hardlinks, but only directories can be linked (from one volume to another). The file that defines/lists the firmlinks resides on the SYSTEM volume at /usr/share/firmlinks. The following paths are defined by default.
+```
+/AppleInternal AppleInternal
+  /Applications Applications
+  /Library Library
+  /System/Library/Caches System/Library/Caches
+  /System/Library/Assets System/Library/Assets
+  /System/Library/PreinstalledAssets System/Library/PreinstalledAssets
+  /System/Library/AssetsV2 System/Library/AssetsV2
+  /System/Library/PreinstalledAssetsV2 System/Library/PreinstalledAssetsV2
+  /System/Library/CoreServices/CoreTypes.bundle/Contents/Library  
+              System/Library/CoreServices/CoreTypes.bundle/Contents/Library
+  /System/Library/Speech System/Library/Speech
+  /Users Users
+  /Volumes Volumes
+  /cores cores
+  /opt opt
+  /private private
+  /usr/local usr/local
+  /usr/libexec/cups usr/libexec/cups
+  /usr/share/snmp usr/share/snmp
+  ```
