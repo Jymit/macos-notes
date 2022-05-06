@@ -269,3 +269,22 @@ CVE-2021-30970
 
 [MacOS/IOS Vulnerabilities and Exploitations.](https://github.com/hetmehtaa/Mac_Vuln)
 
+
+
+
+### notes to sort
+MachOView, otool obtain static info from binaries
+codesign displays code signing information
+objdump provides information about Mach-O files and can disassemble bins
+jtool2 (Jonathan Levin's ) util shares some functionality with otool and codesign
+dtrace for tracing
+LLDB2 and Hopper for debugging bins 
+dynamic loader (dyld) 
+Static Analysis, Dynamic analysis with Hopper and LLDB, which is macOSs default debugger for Xcode
+breakpoints. set a breakpoint on the main function
+
+
+
+
+
+
