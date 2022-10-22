@@ -1,7 +1,36 @@
 #### with great power comes great responsibility
-- problem solving the good old support engineer way :)
+- problem solving the support engineer way :)
 
-https://developer.apple.com/documentation/os/logging
+Pre 10.12 ASl and syslog logging: https://crucialsecurity.wordpress.com/2011/06/22/the-apple-system-log-%E2%80%93-part-1/
+macOS 10.12+ the switch to what "unified logging" happened, now Logs are stored in tracev3 format. https://developer.apple.com/documentation/os/logging
+
+```
+ASL in 10.4, /private/var/log/asl.log
+ASL in 10.5 to 10.5.6: /private/var/log/asl.db in binary format
+syslog –f /private/var/log/asl.db
+ASL after 10.5.6 is found /private/var/log/asl/
+syslog –d /private/var/log/asl
+```
+
+```
+watch the stream:
+
+% log stream
+
+specific:
+
+% log stream --predicate 'eventMessage contains "Twitter"'
+
+search saved logs:
+
+log show --predicate 'eventMessage contains "Hello Logs"' --last 3m
+
+Predicates!
+
+subsystem - Look in /System/Library/Preferences/Logging/Subsystems/ macOS 11.6 there are 247 files in that location
+
+```
+
 
 ```
 % log stream --debug --predicate 'subsystem="com.objective-see.oversight"'
