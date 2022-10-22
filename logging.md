@@ -41,8 +41,11 @@ NSPredicate
 
 The NSPredicate class provides methods to evaluate a predicate and to create a predicate from a string (such as firstName like 'Mark'). When you create a predicate from a string, NSPredicate creates the appropriate predicate and expression instances for you. In some situations, you want to create comparison or compound predicates yourself, in which case you can use the NSComparisonPredicate and NSCompoundPredicate classes.
 
-log stream --debug --predicate 'subsystem="com.apple.network"'
+https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Predicates/AdditionalChapters/Introduction.html
 ```
+
+-
+
 ```
 macoslogginqgsubsystems
 
@@ -137,4 +140,10 @@ class Logging(object):
             plist()
         except Exception as e:
             logger.error(e)
+```
+
+-
+
+```
+log stream --debug --predicate 'subsystem="com.apple.network"'
 ```
