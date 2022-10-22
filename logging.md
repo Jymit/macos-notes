@@ -1,5 +1,7 @@
 #### with great power comes great responsibility
-- problem solving the good ol fashioned support engineer way :)
+- problem solving the good old support engineer way :)
+
+https://developer.apple.com/documentation/os/logging
 
 ```
 % log stream --debug --predicate 'subsystem="com.objective-see.oversight"'
