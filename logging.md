@@ -79,102 +79,259 @@ https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Predi
 
 ```
 macoslogginqgsubsystems
-
-class Logging(object):
-
-    __name__ = 'logger.info(1)'
-    plist = '/System/Library/Preferences/Logging/Subsystems/'
-
-    def __init__(__name__, plist, *args, **kwargs):
-        super(getLogger/, self).__init__()
-
-        logger.info('Input parameters:\n'
-                    'accessibility: "{com.apple.Accessibility.plist}"\n'
-                    'StandaloneHIDFudPlugins: "{com.apple.StandaloneHIDFudPlugins.plist}"\n'
-                    'duetactivityscheduler: "{com.apple.duetactivityscheduler.plist}"\n'
-                    'passkit: "{com.apple.passkit.plist}"\n'
-                    'AppKit: "{com.apple.AppKit.plist}"\n'
-                    'SystemConfiguration: "{com.apple.SystemConfiguration.plist}"\n'
-                    'eapol: "{com.apple.eapol.plist}"\n'
-                    'persona: "{com.apple.persona.plist}"\n'
-                    'AppleIR: "{com.apple.AppleIR.plist}"\n'
-                    'TCC: "{com.apple.TCC.plist}"\n'
-                    'icloudpreferences: "{com.apple.icloudpreferences.plist}"\n'
-                    'apple.pf: "{com.apple.pf.plist}"\n'
-                    'AssetCache: "{com.apple.AssetCache.plist}"\n'
-                    'TimeMachine: "{com.apple.TimeMachine.plist}"\n'
-                    'internetAccounts: "{com.apple.internetAccounts.plist}"\n'
-                    'photoanalysisd.graph: "{com.apple.photoanalysisd.graph.plist}"\n'
-                    'AssetCacheServices: "{com.apple.AssetCacheServices.plist}"\n'
-                    'Transport: "{com.apple.Transport.plist}"\n'
-                    'libsqlite3: "{com.apple.libsqlite3.plist}"\n'
-                    'photoanalysisd.job: "{com.apple.photoanalysisd.job.plist}"\n'
-                    'BezelServices: "{com.apple.BezelServices.plist}"\n'
-                    'accounts: "{com.apple.accounts.plist}"\n'
-                    'locationd.Core: "{com.apple.locationd.Core.plist}"\n'
-                    'photoanalysisd: "{com.apple.photoanalysisd.plist}"\n'
-                    'DesktopServices: "{com.apple.DesktopServices.plist}"\n'
-                    'amp.MediaServices: "{com.apple.amp.MediaServices.plist}"\n'
-                    'locationd.Legacy: "{com.apple.locationd.Legacy.plist}"\n'
-                    'pluginkit: "{com.apple.pluginkit.plist}"\n'
-                    'ExchangeWebServices: "{com.apple.ExchangeWebServices.plist}"\n'
-                    'authkit: "{com.apple.authkit.plist}"\n'
-                    'locationd.Motion: "{com.apple.locationd.Motion.plist}"\n'
-                    'sandbox.reporting: "{com.apple.sandbox.reporting.plist}"\n'
-                    'FaceTime: "{com.apple.FaceTime.plist}"\n'
-                    'avfaudio: "{com.apple.avfaudio.plist}"\n'
-                    'locationd.Position: "{com.apple.locationd.Position.plist}"\n'
-                    'sbd: "{com.apple.sbd.plist}"\n'
-                    'Finder: "{com.apple.Finder.plist}"\n'
-                    'awd.awdd: "{com.apple.awd.awdd.plist}"\n'
-                    'locationd.Utility: "{com.apple.locationd.Utility.plist}"\n'
-                    'securityd: "{com.apple.securityd.plist}"\n'
-                    'HTTPServer: "{com.apple.HTTPServer.plist}"\n'
-                    'awd.framework: "{com.apple.awd.framework.plist}"\n'
-                    'mDNSResponder: "{com.apple.mDNSResponder.plist}"\n'
-                    'sharing: "{com.apple.sharing.plist}"\n'
-                    'IDS: "{com.apple.IDS.plist}"\n'
-                    'bluetooth: "{com.apple.bluetooth.plist}"\n'
-                    'mac.install: "{com.apple.mac.install.plist}"\n'
-                    'siri: "{com.apple.siri.plist}"\n'
-                    'IPConfiguration: "{com.apple.IPConfiguration.plist}"\n'
-                    'calendar: "{com.apple.calendar.plist}"\n'
-                    'mail: "{com.apple.mail.plist}"\n'
-                    'social: "{com.apple.social.plist}"\n'
-                    'ManagedClient: "{com.apple.ManagedClient.plist}"\n'
-                    'captive: "{com.apple.captive.plist}"\n'
-                    'mediaremote: "{com.apple.mediaremote.plist}"\n'
-                    'socialpushagent: "{com.apple.socialpushagent.plist}"\n'
-                    'Messages: "{com.apple.Messages.plist}"\n'
-                    'catalyst: "{com.apple.catalyst.plist}"\n'
-                    'multipeerconnectivity: "{com.apple.multipeerconnectivity.plist}"\n'
-                    'symptomsd: "{com.apple.symptomsd.plist}"\n'
-                    'MessagesEvents: "{com.apple.MessagesEvents.plist}"\n'
-                    'cdp: "{com.apple.cdp.plist}"\n'
-                    'network: "{com.apple.network.plist}"\n'
-                    'syncdefaults: "{com.apple.syncdefaults.plist}"\n'
-                    'NetworkSharing: "{com.apple.NetworkSharing.plist}"\n'
-                    'clouddocs: "{com.apple.clouddocs.plist}"\n'
-                    'networkextension: "{com.apple.networkextension.plist}"\n'
-                    'useractivity: "{com.apple.useractivity.plist}"\n'
-                    'ProtectedCloudStorage: "{com.apple.ProtectedCloudStorage.plist}"\n'
-                    'coreanimation: "{com.apple.coreanimation.plist}"\n'
-                    'networkserviceproxy: "{com.apple.networkserviceproxy.plist}"\n'
-                    'Registration: "{com.apple.Registration.plist}"\n'
-                    'coreaudio: "{com.apple.coreaudio.plist}"\n'
-                    'nlcd: "{com.apple.nlcd.plist}"\n'
-                    'SkyLight: "{com.apple.SkyLight.plist}"\n'
-                    'coredata: "{com.apple.coredata.plist}"\n'
-                    'notes: "{com.apple.notes.plist}"\n'
-
-        try:
-            plist()
-        except Exception as e:
-            logger.error(e)
+/System/Library/Preferences/Logging/Subsystems
+macOS 11.7 250 to date
 ```
-
+```
+com.apple.AVConference.plist
+com.apple.AVConferenceFramework.plist
+com.apple.Accessibility.plist
+com.apple.AccessibilityPerformance.plist
+com.apple.AppKit.plist
+com.apple.AppleIR.plist
+com.apple.AppleMediaServices.plist
+com.apple.AppleServiceToolkit.plist
+com.apple.AquaAppearanceHelper.logging.plist
+com.apple.AssetCache.plist
+com.apple.AssetCacheServices.plist
+com.apple.BackBoardServices.fence.plist
+com.apple.BaseBoard.plist
+com.apple.BezelServices.plist
+com.apple.BoardServices.plist
+com.apple.BootPolicy.plist
+com.apple.CFNetwork.plist
+com.apple.CarbonCore.plist
+com.apple.ClassKit.plist
+com.apple.ConditionInducer.HighSeverity.plist
+com.apple.ConditionInducer.LowSeverity.plist
+com.apple.ConditionInducer.MediumSeverity.plist
+com.apple.CoreAnalytics.stability-event.plist
+com.apple.CoreDisplay.plist
+com.apple.CoreML.plist
+com.apple.CoreRoutine.plist
+com.apple.DataDeliveryServices.plist
+com.apple.DesktopServices.plist
+com.apple.DiagnosticPipeline.plist
+com.apple.DumpPanic.plist
+com.apple.EnergyTracing.plist
+com.apple.ExchangeWebServices.plist
+com.apple.FileProvider.plist
+com.apple.Finder.plist
+com.apple.Foundation.plist
+com.apple.FrontBoard.plist
+com.apple.FrontBoard.workspace.plist
+com.apple.GameKit.plist
+com.apple.GeoAnalytics.plist
+com.apple.GeoServices.Logging.plist
+com.apple.GeoServices.plist
+com.apple.HMFoundation.plist
+com.apple.HTTPServer.plist
+com.apple.HealthKit.plist
+com.apple.Home.plist
+com.apple.HomeKit.plist
+com.apple.IPConfiguration.plist
+com.apple.InputTranscoder.plist
+com.apple.LanguageModeling.plist
+com.apple.ManagedClient.plist
+com.apple.ManagedConfiguration.plist
+com.apple.Maps.RequestResponse.plist
+com.apple.Maps.Suggestions.plist
+com.apple.Maps.plist
+com.apple.MessageSecurity.plist
+com.apple.Messages.telemetry.plist
+com.apple.MobileSoftwareUpdate.plist
+com.apple.Multitouch.plist
+com.apple.Navigation.plist
+com.apple.NetworkSharing.plist
+com.apple.NewDeviceOutreach.plist
+com.apple.PerformanceAnalysis.plist
+com.apple.PlugInKit.plist
+com.apple.ProtectedCloudStorage.plist
+com.apple.RealityKit.plist
+com.apple.ReportMemoryException.plist
+com.apple.Sentry.Framework.Lifecycle.plist
+com.apple.Sentry.FrameworkSignposts.plist
+com.apple.ShareSheet.plist
+com.apple.SkyLight.plist
+com.apple.SoftwareUpdate.plist
+com.apple.SoftwareUpdateMacController.plist
+com.apple.StandaloneHIDFudPlugins.plist
+com.apple.StoreServices.accounts.plist
+com.apple.StoreServices.plist
+com.apple.SystemConfiguration.plist
+com.apple.TextInput.plist
+com.apple.TimeMachine.plist
+com.apple.ToneLibrary.plist
+com.apple.Translation.plist
+com.apple.Transparency.plist
+com.apple.UserNotifications.plist
+com.apple.UserNotificationsUI.plist
+com.apple.VectorKit.GeoGL.plist
+com.apple.VectorKit.plist
+com.apple.WirelessRadioManager.Coex.plist
+com.apple.WirelessRadioManager.iRAT.plist
+com.apple.accessories.core.iap1.plist
+com.apple.accessories.core.iap2.plist
+com.apple.accessories.core.plist
+com.apple.accessories.feature-plugins.plist
+com.apple.accessories.frameworks.plist
+com.apple.accessories.platform-plugins.plist
+com.apple.accessories.plist
+com.apple.accessories.transport-plugins.plist
+com.apple.accounts.plist
+com.apple.amp.MediaServices.plist
+com.apple.amp.iTunesCloud.plist
+com.apple.amp.inappmessages.plist
+com.apple.amp.itunescloudd.plist
+com.apple.amp.mediaplaybackcore.plist
+com.apple.amp.mediaplayer.plist
+com.apple.amp.mediaremote.plist
+com.apple.app_launch_measurement.plist
+com.apple.appinstallation.plist
+com.apple.appleaccount.plist
+com.apple.appleevents.plist
+com.apple.appleidauthentication.plist
+com.apple.appstored.plist
+com.apple.appstorefoundation.plist
+com.apple.authkit.plist
+com.apple.avatar.AvatarUI.plist
+com.apple.avfaudio.plist
+com.apple.awd.awdd.plist
+com.apple.awd.framework.plist
+com.apple.bluetooth.plist
+com.apple.calendar.plist
+com.apple.calls.intenthandler.plist
+com.apple.captive.plist
+com.apple.catalyst.plist
+com.apple.cdp.plist
+com.apple.classroom.plist
+com.apple.clouddocs.plist
+com.apple.cmio.plist
+com.apple.contacts.autocomplete.plist
+com.apple.contacts.carddav.plist
+com.apple.containermanager.plist
+com.apple.coreanimation.plist
+com.apple.coreaudio.plist
+com.apple.corecaptured.plist
+com.apple.coredata.plist
+com.apple.coremedia.plist
+com.apple.corerepair.plist
+com.apple.coreservicesstore.plist
+com.apple.dasd.signpost.plist
+com.apple.defaults.plist
+com.apple.display.reconfig.plist
+com.apple.duetactivityscheduler.plist
+com.apple.eapol.plist
+com.apple.email.signposts.plist
+com.apple.eventkitui.plist
+com.apple.family.plist
+com.apple.followup.plist
+com.apple.frontboard.applibrary.plist
+com.apple.greentea.plist
+com.apple.icloud.fmfd.plist
+com.apple.icloudpreferences.plist
+com.apple.inputmethodkit-perf.plist
+com.apple.installcoordination.plist
+com.apple.internetAccounts.plist
+com.apple.iohid.plist
+com.apple.kernelmanagerd.logging.plist
+com.apple.kext.plist
+com.apple.kvs.plist
+com.apple.launchd.helper.plist
+com.apple.launchservices.plist
+com.apple.libktrace.plist
+com.apple.libsqlite3.plist
+com.apple.lightsoutmanagementd.plist
+com.apple.locationd.Core.plist
+com.apple.locationd.Legacy.plist
+com.apple.locationd.Motion.plist
+com.apple.locationd.Position.plist
+com.apple.locationd.Utility.plist
+com.apple.loginwindow.Lifecycle.plist
+com.apple.loginwindow.logging.plist
+com.apple.mDNSResponder.plist
+com.apple.mac.install.plist
+com.apple.mail.plist
+com.apple.mecabra.plist
+com.apple.metrickit.log.plist
+com.apple.mobileaccessoryupdater.plist
+com.apple.mobileactivationd.plist
+com.apple.mobileassetd.plist
+com.apple.mobilenotes.plist
+com.apple.mobiletimer.logging.plist
+com.apple.multipeerconnectivity.plist
+com.apple.network.plist
+com.apple.networkextension.plist
+com.apple.networkserviceproxy.plist
+com.apple.networkstatistics.plist
+com.apple.nfc.signpost.plist
+com.apple.nlcd.plist
+com.apple.notes.plist
+com.apple.opendirectoryd-installer.plist
+com.apple.opendirectoryd.plist
+com.apple.osanalytics.preoslog.plist
+com.apple.parsec-fbf.plist
+com.apple.parsecd.plist
+com.apple.passkit.plist
+com.apple.pencilkit.plist
+com.apple.persona.plist
+com.apple.pf.plist
+com.apple.photoanalysisd.graph.plist
+com.apple.photoanalysisd.job.plist
+com.apple.photoanalysisd.plist
+com.apple.photoanalysisd.presentation.plist
+com.apple.photos.Neutrino.plist
+com.apple.photos.backend.plist
+com.apple.photos.cpl.plist
+com.apple.photos.plist
+com.apple.photos.ui.export.plist
+com.apple.photos.ui.plist
+com.apple.powerui.smartcharging.plist
+com.apple.proactive.PersonalizationPortrait.Signposts.plist
+com.apple.proactive.PersonalizationPortrait.plist
+com.apple.revisiond.plist
+com.apple.runningboard.plist
+com.apple.sandbox.reporting.plist
+com.apple.sbd.plist
+com.apple.scenekit.plist
+com.apple.security.ckks.plist
+com.apple.security.libcryptex.plist
+com.apple.security.trustedpeers.plist
+com.apple.securityd.plist
+com.apple.sharing.plist
+com.apple.shfuc.plist
+com.apple.shortcuts.plist
+com.apple.siri.DialogEngine.plist
+com.apple.siri.SiriDialogEngine.plist
+com.apple.siri.audio.plist
+com.apple.siri.findmy.plist
+com.apple.siri.homeautomation.plist
+com.apple.siri.inference.plist
+com.apple.siri.messages.plist
+com.apple.siri.phone.plist
+com.apple.siri.playbackcontrols.plist
+com.apple.siri.plist
+com.apple.siri.sirikit.plist
+com.apple.siri.video.plist
+com.apple.social.plist
+com.apple.spindump.plist
+com.apple.spotlight.performance.plist
+com.apple.spotlight.trace.plist
+com.apple.stocks.plist
+com.apple.su.plist
+com.apple.suggestions.plist
+com.apple.symptomsd.NWActivityHelper.plist
+com.apple.symptomsd.plist
+com.apple.symptomstool.plist
+com.apple.syncdefaults.plist
+com.apple.syspolicy.plist
+com.apple.tailspin.plist
+com.apple.timed.plist
+com.apple.triald.plist
+com.apple.useractivity.plist
+com.apple.watchkit.plist
+```
 -
-
 ```
 log stream --debug --predicate 'subsystem="com.apple.network"'
 ```
