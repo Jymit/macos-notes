@@ -1,0 +1,10 @@
+# Pseudo code
+
+# Check dir for log file
+# delete log and create new one with datetimestamp
+# start logging
+# stop wifi
+# wait
+# start wifi
+# stop logging
+# if network issue related provide some stdout as to what was found
